@@ -1,6 +1,10 @@
 body {
-    width: 75%;
-    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    font-size: 1vw; 
+    width: 100%;
+    text-align: left;
+    color:#333;
+    margin: 0;
 }
 
 #appendices h1 {
@@ -13,13 +17,63 @@ body {
     margin-bottom: 5vw;
 }
 
-img{
+img, iframe{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2vw;
     width: 50%;
+
 }
 
 h4{
     font-style: italic;
+    text-align: center;
+    font-size: large;
 }
+
+h1, h2, h4, p{
+    padding-left: 10vw;
+    padding-right: 10vw;
+}
+
+
+p{
+    font-size: large;
+    line-height: 1.5;
+}
+
+ol {
+    list-style-position: outside;
+    margin: 0;
+    padding-left: 15vw;
+    padding-right: 10vw;
+    font-size: large;
+}
+ol li{
+    padding-bottom: 2vw;
+}
+ol li p{
+    margin:0;
+    padding:0;
+}
+
+.title h1{
+    font-size:4vw;
+    text-align: center;
+}
+.title h2{
+    font-size:2vw;
+    text-align: center;
+}
+img .title{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2vw;
+    width: 75%;
+}
+
 
 /*----------------- navbar ------------------- */
 .navbar {
@@ -47,7 +101,9 @@ h4{
 
 .nav-links li {
     flex:1;
-    margin-left: 2vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    text-align:center;
     transition: transform 0.1s ease-in-out;
 }
 .nav-links li:hover{
