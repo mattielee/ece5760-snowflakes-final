@@ -100,9 +100,24 @@
 
     <h2>3.1 Python Model</h2>
     <p>
-        We started our project by writing a Python model. This model is included in our Github repository here. This model allowed us to gain a deeper understanding of the algorithm before diving into lower-level implementations like C and Verilog. Our Python model uses the Cell class shown in the code snippet below: 
+        We started our project by writing a Python model. This model is included in our Github repository <a href="https://github.com/eshitasangani/snowflake-cellular-automata/blob/main/snowflake_python.ipynb">here</a>. This model allowed us to gain a deeper understanding of the algorithm before diving into lower-level implementations like C and Verilog. Our Python model uses the Cell class shown in the code snippet below: 
     </p>
-    <!--INSERT CODE SNIPPET-->
+    <p><code><br>class Cell: <br>
+        &emsp;def __init__(self,s,coor,is_receptive):<br>
+        &emsp;&emsp;&emsp;&emsp;#water used in diffusion (this models the "diffusion view" of the cells, zero-ing out the receptive cells)<br>
+        &emsp;&emsp;&emsp;&emsp;self.u = 0 <br>
+        &emsp;&emsp;&emsp;&emsp;#water not used in diffusion ("non diffusion view" of the cells, zero-ing out the nonreceptive cells)<br>
+        &emsp;&emsp;&emsp;&emsp;self.v = 0 <br>
+        &emsp;&emsp;&emsp;&emsp;self.s = s #total water <br>
+        &emsp;&emsp;&emsp;&emsp;self.coor = coor<br>
+        &emsp;&emsp;&emsp;&emsp;self.next_u = 0 <br>
+        &emsp;&emsp;&emsp;&emsp;self.next_v = 0<br>
+        &emsp;&emsp;&emsp;&emsp;self.is_receptive = is_receptive<br>
+        &emsp;def get_s(self):<br>
+        &emsp;&emsp;return self.s<br>
+        </code>
+    </p>
+    
     <p>
         We use a 2D array to store our Cell objects, allowing us to easily index into the grid. A helper function <i>get_neighbors()</i> returns an array of Cell objects for all neighbors of any Cell's coordinate. This helps us to calculate diffusion. We have an initialization loop and an iteration function <i>one_iter()</i> that updates all the Cell objects in the grid for one iteration of the algorithm as described in Section 2.1. Finally, we have an <i>update_frozen_cells()</i> function that helps us plot the frozen cells for each iteration using matplotlib’s FuncAnimation class. The GIF below shows the output of our Python model. 
     </p>
